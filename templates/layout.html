@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+     
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'bootstrap.min.css') }}">
+
+        
+        <title>Josh's library</title>
+
+
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-dark bg-dark">
+                <!-- logo -->
+                <a class="navbar-brand" href="{{ url_for('login') }}"> Josh Library </a>
+                <!-- items -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            {% block anchor %}
+
+                            {% endblock %}
+                        </li>
+                    </ul>
+        </nav>
+        <div class="container container-fluid">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+
+
+
+    </body>
+</html>

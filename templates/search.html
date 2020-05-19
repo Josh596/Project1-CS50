@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Search Result {% endblock %}
+
+{%block css%}
+          <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        {% endblock %}
+
+
+{%block body %}
+
+{% if work =='Success' %}
+{% for title in searchs %}
+{% for book in title %}
+<a href="{{ url_for( 'result', book_id = book.id) }}"  ><br>{{ book.title }}</br></a>
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+{% endblock %}

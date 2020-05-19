@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %} Welcome {% endblock %}
+
+{%block css%}
+          <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        {% endblock %}
+
+
+{% block body%}
+<form action="{{ url_for('search') }}" method="post">
+ <div class="form-group">
+            <input class="form-control" name="title" placeholder="TITLE">
+            <input class="form-control" name="author" placeholder="AUTHOR">
+            <input class="form-control" name="isbn" placeholder="ISBN">        
+            <button class="btn btn-primary" type="submit">Search</button>
+
+</form>
+</div>
+
+{% if work == 'Failed' %}
+<p> Book not found </p>
+{% endif %}
+<!-- Search form -->
+
+
+
+
+{% endblock %}
